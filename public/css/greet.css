@@ -1,0 +1,96 @@
+body{
+    background-color: black;
+}
+
+h1{
+    margin-top: 2em;
+    color: white;
+    text-align: center;
+}
+
+.name{
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.NameEntered{
+    margin: 1em;
+}
+
+.lingo{
+    display: flex;
+    color: white;
+    justify-content: center;
+}
+
+.eng{
+    display: flex;
+    justify-content: center;
+}
+
+.engRadio{
+    margin-top: 1.8em;
+    margin-right: 1em;
+}
+
+.afr{
+    display: flex;
+    justify-content: center;
+}
+
+.afrRadio{
+    margin-top: 1.8em;
+    margin-right: 1em;
+}
+
+.isi{
+    display: flex;
+    justify-content: center;
+}
+
+.isiRadio{
+    margin-top: 1.8em;
+    margin-right: 1em;
+}
+
+.radio{
+    margin: 20px;
+}
+
+.btn{
+    text-align: center;
+    padding: 2em;
+}
+
+.message{
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.counter{
+    color: white;
+    margin-top: 30px;
+}
+
+.resets{
+    display: flex;
+}
+
+.btn2{
+    text-align: center;
+    padding: 2em;
+}
+
+/* .flex{
+    margin-left: 550px;
+    display: flex;
+} */
+
+@media only screen and (max-width: 600px){
+
+    /* .flex{
+        margin-left: 70px;
+    } */
+}

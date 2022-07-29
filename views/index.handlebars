@@ -11,58 +11,66 @@
 
 <body>
     <div class="content">
-        <h1>Greet</h1>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#data">Data</a></li>
+                <!-- <li><a href="#work">My Work</a></li>
+                <li><a href="#contact">Contact Me</a></li> -->
+            </ul>
+        </nav>
         <form action="/greetings" method="POST">
+            <h1>Greet</h1>
+
             <div class="name">
                 <h3>Name:</h3>
-
                 <input type="text" name="text" class="NameEntered" value="" placeholder="Please Enter Name Here">
-
             </div>
 
             <div class="lingo">
-                {{!-- <form action="/greetings" method="POST"> --}}
-                    <div class="eng">
-                        <input type="radio" name="language" value="eng" class="radio" class="engRadio">
-                        <h4>English</h4>
-                    </div>
-                    <div class="afr">
-                        <input type="radio" name="language" value="afr" class="radio" class="afrRadio">
-                        <h4>Afrikaans</h4>
-                    </div>
-                    <div class="isi">
-                        <input type="radio" name="language" value="isi" class="radio" class="isiRadio">
-                        <h4>isiXhosa</h4>
-                    </div>
-                    {{!--
-                </form> --}}
-            </div>
-
-            {{!-- <div class="flex"> --}}
-                <div class="btn">
-                    {{!-- <form action="/greetings" method="POST"> --}}
-                        <button class="button" type="submit" name="Greet_Me" value="Greet Me">Greet Me</button>
-                        {{!--
-                    </form> --}}
+                <div class="eng">
+                    <input type="radio" name="language" value="eng" class="radio" class="engRadio">
+                    <h4>English</h4>
                 </div>
-            {{!-- </div> --}}
-        
-        <div class="resets">
-            <div class="counter"> ⏰ </div>
-            <div class="btn2">
-                <button class="reset" type="button" name="Counter" value="Greet Me">Reset </button>
+                <div class="afr">
+                    <input type="radio" name="language" value="afr" class="radio" class="afrRadio">
+                    <h4>Afrikaans</h4>
+                </div>
+                <div class="isi">
+                    <input type="radio" name="language" value="isi" class="radio" class="isiRadio">
+                    <h4>isiXhosa</h4>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="message"><h1>{{msg}}</h1>
-        🙋‍♀️...
-    </div>
-</form>
-    </div>
+            <div class="flex">
+                <div class="btn">
+                    <button class="button" type="submit" name="Greet_Me" value="Greet Me">Greet Me</button>
+                </div>
 
-    <script src="./tests/greet.ff.js"></script>
-    <script src="greet.js"></script>
+                <div class="resets">
+                    <div class="counter">
+                        <h1>⏰ {{count}}</h1>
+                    </div>
+                    <div class="btn2">
+                        <button class="reset" type="submit" name="Counter" value="Greet Me">Reset {{reset}}</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message">
+                <h2>  {{msg}}</h2>
+            </div>
+            <div class="message1">
+              <h2>   {{msgs}}</h2>
+
+            </div>
+
+    </div>
+    </form>
+
+    {{!-- <script src="./tests/greet.ff.js"></script> --}}
+    {{!-- <script src="greet.js"></script> --}}
 </body>
 
 </html>

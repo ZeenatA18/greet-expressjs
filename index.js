@@ -14,42 +14,50 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({ extended: false }))
-
 app.use(bodyParser.json())
 
 app.get('/', function (req, res) {
-    res.render('index'
-    )
+    
+    res.render('index', {
 
-});
-
-// app.post('/greetings', function (req, res) {
-
-
-//     greets.greet(req.body.text, req.body.radio)
-//     console.log(greets.greet(req.body.text, req.body.radio));
-
-//     res.redirect('/');
-// });
+    });
+})
 
 app.post('/greetings', function (req, res) {
     let name = req.body.text
     let language = req.body.language
 
+    if (!language) {
+        var msgs = greets.validateInputs(name, "")
+    }
     if (name && language) {
-       var msg= greets.greet(name, language)
+       // greets.setNames(name)
+        var msg = greets.greet(name, language)
     }
-    if(!name ){
-        var msg = greets.validateInputs(name,language)
+    if (!name) {
+        var msgs = greets.validateInputs(name, language)
     }
-    if(!language){
-        var msg = greets.validateInputs(name)
+    if (!name && !language) {
+        var msgs= greets.validateInputs("", "")
+    }
+    if (name) {
+      greets.setNames(name);
+        var count = greets.nameCount()
+    }
+    if(name){
+        // var msg = undefined
+        var reset = greets.reseted()
+        
     }
 
-    res.render('index',{
-        msg
+    res.render('index', {
+        msg,
+        msgs,
+        count,
+        reset
     })
 });
+
 
 app.post('/actions', function (req, res) {
 

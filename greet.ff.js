@@ -1,30 +1,36 @@
 module.exports = function Greetings(list) {
 
-    var storedNames = list || []
+    var storedNames = list || {}
 
 
     function greet(personName, language) {
 
-        if (language === "eng") {
-            return "Hello, " + personName
-        } else if (language === "afr") {
-            return "Goeie dag, " + personName
-        } else if (language === "isi") {
-            return "Molo, " + personName
+        let alphabet = /^[a-z A-Z]+$/
+
+        if (alphabet.test(personName)) {
+            if (language === "eng") {
+                return "Hello, " + personName
+            } else if (language === "afr") {
+                return "Goeie dag, " + personName
+            } else if (language === "isi") {
+                return "Molo, " + personName
+            }
+        }else{
+            return "ERROR!! Use Alphabet only"
         }
     }
-    function validateInputs(name,language){
-        if (name ===""){
-            return "please Enter name" 
+    function validateInputs(name, language) {
+        if (name === "" && language === "") {
+            return "please enter valid name and select language"
         }
-        if (language ===""){
+        if (name === "") {
+            return "please Enter name"
+        }
+        if (language === "") {
             return "please select language"
         }
-        if(name ===""  && language ===""){
-            return "please enter valid name and select language"
-        }  
     }
-    
+
 
     function errorMessenges(name) {
         if (storedNames.includes(name)) {
@@ -34,12 +40,12 @@ module.exports = function Greetings(list) {
     }
 
     function setNames(personName) {
-        if (errorMessenges(personName) === false) {
-            storedNames.push(personName)
-            return true
+        if (storedNames[personName] == undefined) {
+            storedNames[personName] =1 
         }
         else {
-            return false;
+            storedNames[personName]++
+
         }
 
     }
@@ -49,12 +55,15 @@ module.exports = function Greetings(list) {
     }
 
     function nameCount() {
-        return storedNames.length
+       var naamlist = Object.keys(storedNames);
+
+        return naamlist.length;
     }
 
-    function setGreet(greet){
-        
+    function reseted(){
+        nameCount()
     }
+
 
     return {
         greet,
@@ -62,6 +71,7 @@ module.exports = function Greetings(list) {
         getNames,
         nameCount,
         errorMessenges,
-        validateInputs
+        validateInputs,
+        reseted
     }
 }

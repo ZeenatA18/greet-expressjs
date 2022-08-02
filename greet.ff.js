@@ -1,6 +1,6 @@
-module.exports = function Greetings(list) {
+module.exports = function Greetings() {
 
-    var storedNames = list || {}
+    var storedNames = {}
 
 
     function greet(personName, language) {
@@ -20,17 +20,17 @@ module.exports = function Greetings(list) {
         }
     }
     function validateInputs(name, language) {
-        if (name === "" && language === "") {
+        if (name === "" && !language) {
             return "please enter valid name and select language"
         }
-        if (name === "") {
+        else {if(name === "") {
             return "please Enter name"
         }
-        if (language === "") {
+        if (!language) {
             return "please select language"
         }
     }
-
+    }
 
     function errorMessenges(name) {
         if (storedNames.includes(name)) {
@@ -51,7 +51,7 @@ module.exports = function Greetings(list) {
     }
 
     function getNames() {
-        return storedNames
+        return Object.keys(storedNames)
     }
 
     function nameCount() {
@@ -60,8 +60,19 @@ module.exports = function Greetings(list) {
         return naamlist.length;
     }
 
+    function naam(){
+        var listed = Object.values(storedNames);
+        return listed
+    }
+
+    function getUsercounter(naam){
+    return storedNames[naam]
+    }
+
     function reseted(){
-        nameCount()
+        // return storedNames = {}
+        
+        
     }
 
 
@@ -72,6 +83,8 @@ module.exports = function Greetings(list) {
         nameCount,
         errorMessenges,
         validateInputs,
-        reseted
+        reseted,
+        naam,
+        getUsercounter
     }
 }

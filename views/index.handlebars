@@ -14,8 +14,8 @@
 
         <nav class="navbar">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#data">Data</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/count">Data</a></li>
                 <!-- <li><a href="#work">My Work</a></li>
                 <li><a href="#contact">Contact Me</a></li> -->
             </ul>
@@ -23,8 +23,11 @@
         <form action="/greetings" method="POST">
             <h1>Greet</h1>
 
+
             <div class="name">
-                <h3>Name:</h3>
+                <a href="/list">
+                    <h3>Name:</h3>
+                </a>
                 <input type="text" name="text" class="NameEntered" value="" placeholder="Please Enter Name Here">
             </div>
 
@@ -59,18 +62,22 @@
             </div>
 
             <div class="message">
-                <h2>  {{msg}}</h2>
+                <h2> {{msg}}</h2>
             </div>
+            
             <div class="message1">
-              <h2>   {{msgs}}</h2>
-
+                {{#if messages}}
+                <h3> {{messages.error}}</h3>
+                {{/if}}
             </div>
-
+            {{!-- <a href="greets.handlebars">Greeted Names</a> --}}
     </div>
     </form>
 
-    {{!-- <script src="./tests/greet.ff.js"></script> --}}
-    {{!-- <script src="greet.js"></script> --}}
+    {{!--
+    <script src="./tests/greet.ff.js"></script> --}}
+    {{!--
+    <script src="greet.js"></script> --}}
 </body>
 
 </html>

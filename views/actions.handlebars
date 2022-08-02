@@ -1,0 +1,22 @@
+<div>
+    <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="../count">Data</a></li>
+            </ul>
+        </nav>
+        
+    <h1>Greeted Names</h1>
+
+ <div class="greeted">
+       
+        {{#each name}}
+    <ul>
+        {{!-- <td>{{@key}}</td> --}}
+        <h3> <li> <a href="/count/{{this}}">{{this}} <br> </a> </li> </h3>
+    
+       </ul> 
+        {{/each}}
+    </div>
+
+</div>

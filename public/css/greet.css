@@ -1,6 +1,6 @@
 body{
     background-color: black;
-    /* background-image: url(pika.jpg); */
+    /* background-image: url(w.jpg); */
 }
 
 .navbar{
@@ -130,6 +130,19 @@ h1{
     justify-content: center;
 }
 
+.greeted{
+color: white;
+/* justify-content: center; */
+align-content: center;
+}
+
+.data{
+color: white;
+}
+
+h2{
+    color: white;
+}
 @media only screen and (max-width: 600px){
 
     .flex{
